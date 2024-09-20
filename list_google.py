@@ -10,6 +10,7 @@ import random
 import subprocess
 import os
 import json
+import parse_html
 import spider_tool
 
 # from selenium.webdriver.chrome.service import Service as ChromeService
@@ -154,6 +155,11 @@ with open("output_log.txt", "w+", encoding="utf-8") as f:
 
         if not load_status:
             continue
+
+        # 直接解析html
+        # cur_html = driver.page_source
+        # parse_html.parse_html_to_csv(cur_html,"law_output.csv")
+        # time.sleep(15)
 
         # 获取标题
         title_element = driver.find_element(By.CSS_SELECTOR, 'div.detials.contentLeft h3')
